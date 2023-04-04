@@ -26,6 +26,13 @@ router.get('/:id',(req,res) => {
 })
 });
 
+//add a book
+router.post('/', (req, res) => {
+    Book.create(req.body)
+      .then(book => res.json({ msg: 'Book added successfully' }))
+      .catch(err => res.status(400).json({ error: 'Unable to add this book kije hoise' }));
+  });
+
 //update description of book by id
 router.put(':/id', (req,res) => {
     Book.findByIdAndUpdate(req.params.id, req.body)
