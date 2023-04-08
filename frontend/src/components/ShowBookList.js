@@ -3,6 +3,7 @@ import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import BookCard from './BookCard';
+import SearchBar from './SearchBar';
 
 function ShowBookList() {
   const [books, setBooks] = useState([]);
@@ -31,6 +32,7 @@ function ShowBookList() {
             <br />
             <h2 className='display-4 text-center'>Books List</h2>
           </div>
+          
 
           <div className='col-md-11'>
             <Link
@@ -46,6 +48,9 @@ function ShowBookList() {
         </div>
 
         <div className='list'>{bookList}</div>
+        <div className='searchbar'>
+          <SearchBar />
+          </div>
       </div>
     </div>
   );
